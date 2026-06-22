@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Butwal SmartGov - Official Digital Portal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=SF+Pro+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Include Three.js for 3D Background -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Intro Animation / Preloader -->
+    <div id="intro-preloader">
+        <div class="preloader-content">
+            <div class="glow-logo">
+                <i class="fas fa-building"></i>
+            </div>
+            <h2>Butwal SmartGov</h2>
+            <div class="loader-bar"><div class="loader-progress"></div></div>
+            <p>Initializing AI Governance Engine...</p>
+        </div>
+    </div>
+
+    <!-- 3D Canvas Background -->
+    <div id="canvas-container"></div>
+
+    <div class="site-wrapper">
+        <!-- Top Mini Bar -->
+        <div class="top-mini-bar">
+            <div class="container top-bar-inner">
+                <div class="top-bar-left">
+                    Butwal Sub-Metropolitan City — Official Digital Portal
+                </div>
+                <div class="top-bar-right">
+                    <span><i class="fas fa-phone-alt"></i> 071-532805</span>
+                    <span><i class="fas fa-envelope"></i> info@hubit.com.np</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Navigation -->
+        <nav class="main-nav">
+            <div class="container nav-inner">
+                <!-- Logo -->
+                <a href="#" class="logo">
+                    <div class="logo-icon blue-bg">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h1>Butwal SmartGov</h1>
+                        <p>Sub-Metro Portal</p>
+                    </div>
+                </a>
+
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn" id="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <!-- Menu -->
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#" class="active" data-lang-en="Home" data-lang-np="गृहपृष्ठ">Home</a></li>
+                    <li class="has-dropdown">
+                        <a href="#" data-lang-en="Departments" data-lang-np="विभागहरू">Departments <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="#" data-lang-en="Health" data-lang-np="स्वास्थ्य">Health</a></li>
+                            <li><a href="#" data-lang-en="Agriculture" data-lang-np="कृषि">Agriculture</a></li>
+                            <li><a href="traffic-dashboard.html" data-lang-en="Traffic & Safety" data-lang-np="ट्राफिक र सुरक्षा">Traffic & Safety</a></li>
+                            <li><a href="#" data-lang-en="Environment" data-lang-np="वातावरण">Environment</a></li>
+                            <li><a href="#" data-lang-en="Education" data-lang-np="शिक्षा">Education</a></li>
+                            <li><a href="#" data-lang-en="IT & Innovation" data-lang-np="सूचना प्रविधि">IT & Innovation</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#" data-lang-en="Progress Tracker" data-lang-np="प्रगति ट्रयाकर">Progress Tracker</a></li>
+                    <li><a href="#" data-lang-en="Events" data-lang-np="कार्यक्रमहरू">Events</a></li>
+                    <li><a href="#" data-lang-en="Contact" data-lang-np="सम्पर्क">Contact</a></li>
+                </ul>
+
+                <!-- Actions -->
+                <div class="nav-actions">
+                    <button class="icon-btn robot-btn" id="ai-trigger-nav" title="Launch AI Assistant"><i class="fas fa-robot"></i><span class="status-dot"></span></button>
+                    <button class="lang-btn" id="lang-toggle"><i class="fas fa-globe"></i> <span id="current-lang">NP</span></button>
+                    <button class="icon-btn theme-btn" id="theme-toggle" title="Toggle Dark/Light Mode"><i class="far fa-moon"></i></button>
+                    <button class="login-btn"><i class="far fa-user"></i> <span data-lang-en="Login" data-lang-np="लगइन">Login</span></button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <header class="hero">
+            <div class="container hero-inner">
+                <div class="hero-content">
+                    <div class="pill-badge fade-up">
+                        <i class="far fa-star"></i> <span data-lang-en="AI-Powered Governance Portal" data-lang-np="AI-सञ्चालित सुशासन पोर्टल">AI-Powered Governance Portal</span>
+                    </div>
+                    <h1 class="hero-title fade-up delay-1" data-lang-en="Butwal<br><span>SmartGov Portal</span>" data-lang-np="बुटवल<br><span>स्मार्टगोभ पोर्टल</span>">Butwal<br><span>SmartGov Portal</span></h1>
+                    <p class="hero-desc fade-up delay-2" data-lang-en="Transparent, AI-driven digital governance for Butwal Sub-Metropolitan City. Track progress, access services, and stay informed." data-lang-np="बुटवल उपमहानगरपालिकाका लागि पारदर्शी, AI-सञ्चालित डिजिटल सुशासन। प्रगति ट्र्याक गर्नुहोस्, सेवाहरूमा पहुँच गर्नुहोस्।">
+                        Transparent, AI-driven digital governance for Butwal Sub-Metropolitan City. Track progress, access services, and stay informed.
+                    </p>
+                    <div class="hero-buttons fade-up delay-3">
+                        <button class="btn btn-white"><i class="fas fa-chart-line"></i> <span data-lang-en="View Progress" data-lang-np="प्रगति हेर्नुहोस्">View Progress</span></button>
+                        <button class="btn btn-blue" id="ai-trigger-hero"><i class="fas fa-robot"></i> <span data-lang-en="Ask AI Assistant" data-lang-np="AI सहायकलाई सोध्नुहोस्">Ask AI Assistant</span></button>
+                    </div>
+                </div>
+            </div>
+            <!-- SVG Curve -->
+            <div class="hero-curve">
+                <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+                    <path class="curve-path" d="M0,60 C400,120 1000,0 1440,60 L1440,120 L0,120 Z" fill="var(--bg-main)"></path>
+                </svg>
+            </div>
+        </header>
+
+        <!-- Floating Stats Section -->
+        <section class="stats-section">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon blue-icon"><i class="fas fa-users"></i></div>
+                        <div class="stat-info">
+                            <h2>1,50,000+</h2>
+                            <p data-lang-en="Citizens Served" data-lang-np="नागरिक सेवामा">Citizens Served</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon green-icon"><i class="fas fa-file-alt"></i></div>
+                        <div class="stat-info">
+                            <h2>24</h2>
+                            <p data-lang-en="Active Policies" data-lang-np="सक्रिय नीतिहरू">Active Policies</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon teal-icon"><i class="far fa-check-circle"></i></div>
+                        <div class="stat-info">
+                            <h2>47</h2>
+                            <p data-lang-en="Completed Projects" data-lang-np="सम्पन्न योजनाहरू">Completed Projects</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon indigo-icon"><i class="fas fa-chart-line"></i></div>
+                        <div class="stat-info">
+                            <h2>6</h2>
+                            <p data-lang-en="Departments" data-lang-np="विभागहरू">Departments</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Government Services / Departments -->
+        <section class="section services" id="departments">
+            <div class="container">
+                <div class="section-header-flex">
+                    <div>
+                        <span class="sub-label" data-lang-en="Our Departments" data-lang-np="हाम्रा विभागहरू">Our Departments</span>
+                        <h2 class="section-title" data-lang-en="Government Services" data-lang-np="सरकारी सेवाहरू">Government Services</h2>
+                        <p class="section-subtitle" data-lang-en="Access all city services, policies, and AI-driven insights from one platform." data-lang-np="सबै नगर सेवाहरू, नीतिहरू, र AI-सञ्चालित अन्तर्दृष्टिहरू एकै प्लेटफर्मबाट पहुँच गर्नुहोस्।">Access all city services, policies, and AI-driven insights from one platform.</p>
+                    </div>
+                </div>
+                
+                <div class="services-grid">
+                    <a href="#" class="service-card">
+                        <div class="service-icon-box red-light"><i class="far fa-heart"></i></div>
+                        <h3 data-lang-en="Health" data-lang-np="स्वास्थ्य">Health</h3>
+                        <p data-lang-en="Public health services, hospitals, and wellness programs in Butwal." data-lang-np="बुटवलमा जनस्वास्थ्य सेवा, अस्पताल र कल्याण कार्यक्रमहरू।">Public health services, hospitals, and wellness programs in Butwal.</p>
+                        <i class="fas fa-chevron-right card-arrow"></i>
+                    </a>
+                    <a href="#" class="service-card">
+                        <div class="service-icon-box green-light"><i class="fas fa-seedling"></i></div>
+                        <h3 data-lang-en="Agriculture" data-lang-np="कृषि">Agriculture</h3>
+                        <p data-lang-en="Farming support, subsidies, and modern agricultural practices." data-lang-np="कृषि सहयोग, अनुदान, र आधुनिक कृषि अभ्यासहरू।">Farming support, subsidies, and modern agricultural practices.</p>
+                        <i class="fas fa-chevron-right card-arrow"></i>
+                    </a>
+                    <a href="traffic-dashboard.html" class="service-card highlight-card">
+                        <div class="service-icon-box orange-light"><i class="fas fa-shield-alt"></i></div>
+                        <h3 data-lang-en="Traffic & Safety (AI Dashboard)" data-lang-np="ट्राफिक र सुरक्षा">Traffic & Safety (AI Dashboard)</h3>
+                        <p data-lang-en="Road safety, traffic management, and emergency services." data-lang-np="सडक सुरक्षा, ट्राफिक व्यवस्थापन, र आपतकालीन सेवाहरू।">Road safety, traffic management, and emergency services.</p>
+                        <i class="fas fa-chevron-right card-arrow"></i>
+                    </a>
+                    <a href="#" class="service-card">
+                        <div class="service-icon-box teal-light"><i class="fas fa-leaf"></i></div>
+                        <h3 data-lang-en="Environment" data-lang-np="वातावरण">Environment</h3>
+                        <p data-lang-en="Cleanliness, waste management, and environmental protection." data-lang-np="सरसफाई, फोहोर व्यवस्थापन, र वातावरणीय संरक्षण।">Cleanliness, waste management, and environmental protection.</p>
+                        <i class="fas fa-chevron-right card-arrow"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Assistant Chatbot UI -->
+        <div id="ai-chat-widget" class="hidden">
+            <div class="chat-header">
+                <div>
+                    <i class="fas fa-robot"></i> SmartGov AI Assistant
+                </div>
+                <button id="close-chat"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="chat-body" id="chat-body">
+                <div class="chat-message bot">
+                    Hello! I am the Butwal AI Assistant. I can help you with services, policies, traffic updates, and departmental information. How can I assist you today?
+                </div>
+            </div>
+            <div class="chat-input-area">
+                <input type="text" id="chat-input" placeholder="Ask something (e.g. Traffic rules, Taxes...)">
+                <button id="send-chat"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand-col">
+                        <div class="footer-logo">
+                            <div class="logo-icon blue-bg"><i class="fas fa-building"></i></div>
+                            <div class="logo-text">
+                                <h3>Butwal SmartGov</h3>
+                            </div>
+                        </div>
+                        <p class="footer-desc">Official AI-powered digital governance portal of Butwal Sub-Metropolitan City, serving 150,000+ citizens.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="container footer-bottom-inner">
+                    <p>&copy; 2026 Butwal Sub-Metropolitan City. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
