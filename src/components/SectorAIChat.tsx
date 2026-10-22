@@ -77,7 +77,7 @@ export const SectorAIChat: React.FC<SectorAIChatProps> = ({ sectorName, sectorCo
     endRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages, isTyping]);
 
-  const getResponse = (query: string): string => {
+  const getResponse = (_query: string): string => {
     const responses = SECTOR_RESPONSES[sectorName] || SECTOR_RESPONSES['Government'];
     const idx = Math.floor(Math.random() * responses.length);
     return responses[idx];

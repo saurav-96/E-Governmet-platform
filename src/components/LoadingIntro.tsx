@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 export const LoadingIntro: React.FC<{ onComplete: () => void }> = ({ onComplete }) => {
   const [phase, setPhase] = useState(0);

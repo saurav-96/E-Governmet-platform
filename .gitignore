@@ -6,3 +6,8 @@ build/
 .env*
 .vscode/
 .idea/
+
+# Local debug output
+errors.txt
+build_errors.txt
+tsc_output.txt
